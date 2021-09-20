@@ -14,18 +14,18 @@
 
 
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jason0asdjia.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jason0asdjia.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="一天又一天">
-<meta property="og:type" content="website">
-<meta property="og:title" content="My Blog">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Bye的踩坑记录">
 <meta property="og:url" content="https://jason0asdjia.github.io/index.html">
-<meta property="og:site_name" content="My Blog">
-<meta property="og:description" content="一天又一天">
+<meta property="og:site_name" content="Bye的踩坑记录">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Jason0asdjia">
 <meta name="twitter:card" content="summary">
@@ -43,11 +43,11 @@
   };
 </script>
 
-  <title>My Blog</title>
+  <title>Bye的踩坑记录</title>
   
 
 
-  <script>
+  <script data-pjax>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -103,13 +103,15 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">My Blog</h1>
+      <h1 class="site-title">Bye的踩坑记录</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
+      <p class="site-subtitle" itemprop="description">理想不伟大</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -149,11 +151,38 @@
     <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -163,6 +192,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -181,11 +211,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jason0asdjia">
-      <meta itemprop="description" content="一天又一天">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog">
+      <meta itemprop="name" content="Bye的踩坑记录">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -201,7 +231,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-09-20 16:45:32 / 修改时间：17:53:58" itemprop="dateCreated datePublished" datetime="2021-09-20T16:45:32+08:00">2021-09-20</time>
+              <time title="创建时间：2021-09-20 16:45:32 / 修改时间：18:47:20" itemprop="dateCreated datePublished" datetime="2021-09-20T16:45:32+08:00">2021-09-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -220,6 +250,20 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -248,50 +292,15 @@
 <li>初始化</li>
 </ul>
 </li>
-<li>创建对象</li>
-</ul>
-<h2 id="一、类加载过程"><a href="#一、类加载过程" class="headerlink" title="一、类加载过程"></a>一、类加载过程</h2><p>由类加载器负责根据一个类的全限定名来读取此类的二进制字节流到 JVM 内部，并存储在运行时内存区的方法区，然后将其转换为一个与目标类型对应的 java.lang.Class 对象实例</p>
-<p>java 使用<strong>双亲委派模型</strong>进行类加载，用来维护类的唯一性（jvm 在判定两个类是否相同时，不仅要判断两个类名是否相同，而且要判断是否由同一个类加载器实例加载的。只有两者同时满足的情况下，jvm 才认为这两个类是相同的）。</p>
-<blockquote>
-<p>双亲委派模型的工作过程是：当该类第一次使用时，该类的类加载器（ClassLoader）收到类加载请求，首先将这个请求交给父类加载器完成，每一个层次的类加载器都是如此，所以所有加载请求最后都是交给顶层的启动类加载器，只有当父类加载器无法完成这个加载请求时，子加载器会去尝试加载……总结：自底向上传递类加载请求，自上向下尝试加载类。</p>
-</blockquote>
-<p><img src="/images/classloader.png" alt="image-20200831225137263"></p>
-<p>双亲委派模型的好处是：能够确保一个类的全局唯一性，如果没有此模型，我们可以随时使用自定义的类替代 java 核心类，这样会有很大的安全隐患。</p>
-<h2 id="二、类的连接过程："><a href="#二、类的连接过程：" class="headerlink" title="二、类的连接过程："></a>二、类的连接过程：</h2><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>格式验证：验证是否符合 class 文件规范</p>
-<p>语义验证：检查一个被标记为 final 的类型是否包含子类；检查一个类中的 final 方法是否被子类进行重写；确保父类和子类之间没有不兼容的一些方法声明（比如方法签名相同，但方法的返回值不同）</p>
-<p>操作验证：在操作数栈中的数据必须进行正确的操作，对常量池中的各种符号引用执行验证（通常在解析阶段执行，检查是否可以通过符号引用中描述的全限定名定位到指定类型上，以及类成员信息的访问修饰符是否允许访问等）</p>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>为类中的所有<strong>静态变量</strong>分配内存空间，并为其设置一个初始值。而被 final 修饰的 static 变量（常量）会直接赋值。</p>
-<h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><p>将常量池中的符号引用转为直接引用（得到类或者字段、方法在内存中的指针或者偏移量，以便直接调用该方法），这个可以在初始化之后再执行。解析需要静态绑定的内容。 所有不会被重写的方法和域都会被静态绑定</p>
-<blockquote>
-<p>符号引用：由字符串表示（jvm 运行时无法直接使用，因为没有关联内存空间），例如：“java/io/PrintStream.println:(Ljava/lang/String;)V”。里面有类的信息，方法名，方法参数等信息。。</p>
-</blockquote>
-<blockquote>
-<p>直接引用：解析成直接引用就是将符号引用（字符串）解析成 jvm 在运行时直接使用的“数据”，例如<strong>虚方法表的下标</strong>，通过偏移量虚拟机可以直接在该类的内存区域中找到方法字节码的起始位置。</p>
-</blockquote>
-<h2 id="三、类的初始化："><a href="#三、类的初始化：" class="headerlink" title="三、类的初始化："></a>三、类的初始化：</h2><ul>
-<li><p>为静态变量赋值</p>
-</li>
-<li><p>执行 static 代码块</p>
-</li>
-</ul>
-<p><strong>注意</strong>：static 代码块只有 jvm 能够调用 　　如果是多线程需要同时初始化一个类，仅仅只能允许其中一个线程对其执行初始化操作，其余线程必须等待，只有在活动线程执行完对类的初始化操作之后，才会通知正在等待的其他线程。</p>
-<p>因为子类存在对父类的依赖，所以<strong>类的加载顺序是先加载父类后加载子类，初始化也一样。</strong> 不过，父类初始化时，子类静态变量的值也有有的，是默认值。</p>
-<p>最终，方法区会存储当前类类信息，包括类的<strong>静态变量</strong> 、<strong>类初始化代码</strong> （<strong>定义静态变量时的赋值语句</strong> 和 <strong>静态初始化代码块</strong> ）、<strong>实例变量定义</strong> 、<strong>实例初始化代码</strong> （<strong>定义实例变量时的赋值语句实例代码块</strong> 和<strong>构造方法</strong> ）和<strong>实例方法</strong> ，还有<strong>父类的类信息引用</strong>。</p>
-<h2 id="四、创建对象"><a href="#四、创建对象" class="headerlink" title="四、创建对象"></a>四、创建对象</h2><ol>
-<li><p>在堆内存分配对象需要的内存空间</p>
-<p>分配的内存空间包括本类和父类的所有实例变量，但不包括任何静态变量（1.8 之后静态变量和常量池都在堆中创建）</p>
-</li>
-<li><p>对所有实例变量赋默认值</p>
-<p>将方法区内对实例变量的定义拷贝一份到堆区，然后赋默认值（_默认值是由 jvm 自动赋的，所以在 DCL 时要加 volatile_）</p>
-</li>
-<li><p>执行实例初始化代码</p>
-<p>初始化顺序是先初始化父类再初始化子类，初始化时先执行实例代码块然后是构造方法</p>
-</li>
-<li><p>如果有类似于<strong>Child c = new Child()<strong>形式的 c 引用的话，在栈区定义</strong>Child</strong>类型引用变量 c，然后将堆区对象的地址赋值给它</p>
-<p><strong>需要注意</strong>：每个字类对象持有父类对象的引用，可通过 super 调用父类对象，但外部不可访问。</p>
-</li>
-</ol>
-
+<li>创建对象
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/09/20/JAVA-new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E8%BF%87%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -315,11 +324,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="Jason0asdjia">
-      <meta itemprop="description" content="一天又一天">
+      <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="My Blog">
+      <meta itemprop="name" content="Bye的踩坑记录">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
@@ -351,6 +360,20 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
+            </span>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>299</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -451,7 +474,7 @@
     <img class="site-author-image" itemprop="image" alt="Jason0asdjia"
       src="/images/avatar.jpg">
   <p class="site-author-name" itemprop="name">Jason0asdjia</p>
-  <div class="site-description" itemprop="description">一天又一天</div>
+  <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
@@ -514,18 +537,106 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Jason0asdjia</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">2k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">2 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
+  <div id="site-runtime">
+  <span class="post-meta-item-icon">
+    <i class="fa fa-clock-o"></i>
+  </span>
+  <span id="runtime"></span>
+</div>
+
+<script language="javascript">
+  function isPC() {
+    var userAgentInfo = navigator.userAgent;
+    var agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    for (var i = 0; i < agents.length; i++) {
+      if (userAgentInfo.indexOf(agents[i]) > 0) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function siteTime(openOnPC, start) {
+    window.setTimeout("siteTime(openOnPC, start)", 1000);
+    var seconds = 1000;
+    var minutes = seconds * 60;
+    var hours = minutes * 60;
+    var days = hours * 24;
+    var years = days * 365;
+      start = new Date("2021-09-20 19:00:00 +0800");
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var diff = now - start;
+
+    var diffYears = Math.floor(diff / years);
+    var diffDays = Math.floor((diff / days) - diffYears * 365);
+    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+
+    if (openOnPC) {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+    } else {
+      document.getElementById("runtime").innerHTML = "Running: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+    }
+  }
+
+  var showOnMobile = false;
+  var openOnPC = isPC();
+  var start = new Date();
+  siteTime(openOnPC, start);
+
+  if (!openOnPC && !showOnMobile) {
+    document.getElementById('site-runtime').style.display = 'none';
+  }
+</script>
 
         
+<div class="busuanzi-count">
+  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
 
 
 
-<script>
+<script data-pjax>
   (function() {
     function leancloudSelector(url) {
       url = encodeURI(url);
@@ -624,6 +735,7 @@
 
   
   <script src="/lib/anime.min.js"></script>
+  <script src="/lib/pjax/pjax.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
   <script src="/lib/velocity/velocity.ui.min.js"></script>
 
@@ -637,6 +749,65 @@
 
 <script src="/js/next-boot.js"></script>
 
+  <script>
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+</script>
+
 
 
 
@@ -645,6 +816,8 @@
 
 
 
+  
+<script src="/js/local-search.js"></script>
 
 
 
@@ -656,6 +829,9 @@
 
 
 
+
+
+    <div id="pjax">
   
 
   
@@ -680,5 +856,6 @@ window.darkmode = darkmode;
 darkmode.showWidget();
 </script>
 
+    </div>
 </body>
 </html>
