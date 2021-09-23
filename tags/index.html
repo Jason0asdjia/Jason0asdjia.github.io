@@ -220,10 +220,10 @@
       <div class="post-body">
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-              目前共计 2 个标签
+              目前共计 3 个标签
             </div>
             <div class="tag-cloud-tags">
-          <a href="/tags/java/" style="font-size: 13px; color: #ccc">java</a> <a href="/tags/jvm/" style="font-size: 13px; color: #ccc">jvm</a>
+          <a href="/tags/WSL/" style="font-size: 13px; color: #ccc">WSL</a> <a href="/tags/java/" style="font-size: 13px; color: #ccc">java</a> <a href="/tags/jvm/" style="font-size: 13px; color: #ccc">jvm</a>
         </div>
           </div>
           
@@ -339,20 +339,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -406,7 +406,7 @@
     <span class="post-meta-divider">|</span> -->
     <!-- 不蒜子计数初始值纠正 -->
     <script>
-    $(function() {
+    init = function() {
 
         var int = setInterval(fixCount, 50);  // 50ms周期检测函数
         var countOffset = 20000;  // 初始化首次数据
@@ -419,7 +419,8 @@
             }                  
         }
             
-    });
+    };
+    init()
     </script> 
     
     

@@ -333,20 +333,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -400,7 +400,7 @@
     <span class="post-meta-divider">|</span> -->
     <!-- 不蒜子计数初始值纠正 -->
     <script>
-    $(function() {
+    init = function() {
 
         var int = setInterval(fixCount, 50);  // 50ms周期检测函数
         var countOffset = 20000;  // 初始化首次数据
@@ -413,7 +413,8 @@
             }                  
         }
             
-    });
+    };
+    init()
     </script> 
     
     
