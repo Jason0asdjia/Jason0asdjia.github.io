@@ -470,13 +470,13 @@
     var diffYears = Math.floor(diff / years);
     var diffDays = Math.floor((diff / days) - diffYears * 365);
     var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
-    <!--var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
-    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);-->
+    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
 
     if (openOnPC) {
-      document.getElementById("runtime").innerHTML = "本站已运营：" + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+      document.getElementById("runtime").innerHTML = "✨已运营: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
     } else {
-      document.getElementById("runtime").innerHTML = "本站已运营：" + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+      document.getElementById("runtime").innerHTML = "✨已运营: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
     }
   }
 
