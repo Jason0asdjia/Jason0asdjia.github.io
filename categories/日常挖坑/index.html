@@ -205,20 +205,23 @@
       </div>
 
       
+    <div class="collection-year">
+      <h1 class="collection-header">2021</h1>
+    </div>
 
   <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
     <header class="my-post-header">
 
       <div class="my-post-meta">
         <time class="my-post-time" itemprop="dateCreated"
-              datetime="1970-01-01T08:00:00+08:00"
-              content="1970-01-01">
-          01-01
+              datetime="2021-09-23T19:19:30+08:00"
+              content="2021-09-23">
+          09-23
         </time>
       </div>
 
       <h2 class="my-post-title">
-          <a class="my-post-title-link" href="/1970/01/01/WSL2-%E5%AE%89%E8%A3%85nodejs/" itemprop="url">
+          <a class="my-post-title-link" href="/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/" itemprop="url">
             
               <span itemprop="name">WSL2 安装nodejs</span>
             
@@ -368,11 +371,9 @@
     <span class="post-meta-divider">|</span> -->
     <!-- 不蒜子计数初始值纠正 -->
     <script>
-    init = function() {
-
+    $(function() {
         var int = setInterval(fixCount, 50);  // 50ms周期检测函数
         var countOffset = 20000;  // 初始化首次数据
-
         function fixCount() {            
         if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
             {
@@ -380,9 +381,7 @@
                 clearInterval(int);
             }                  
         }
-            
-    };
-    init()
+    });
     </script> 
     
     

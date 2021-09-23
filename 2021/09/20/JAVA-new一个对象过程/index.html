@@ -377,11 +377,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/1970/01/01/WSL2-%E5%AE%89%E8%A3%85nodejs/" rel="prev" title="WSL2 安装nodejs">
-      <i class="fa fa-chevron-left"></i> WSL2 安装nodejs
-    </a></div>
       <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/" rel="next" title="WSL2 安装nodejs">
+      WSL2 安装nodejs <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -523,11 +523,9 @@
     <span class="post-meta-divider">|</span> -->
     <!-- 不蒜子计数初始值纠正 -->
     <script>
-    init = function() {
-
+    $(function() {
         var int = setInterval(fixCount, 50);  // 50ms周期检测函数
         var countOffset = 20000;  // 初始化首次数据
-
         function fixCount() {            
         if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
             {
@@ -535,9 +533,7 @@
                 clearInterval(int);
             }                  
         }
-            
-    };
-    init()
+    });
     </script> 
     
     
