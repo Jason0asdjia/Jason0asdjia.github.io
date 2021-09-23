@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://github-readme-stats.vercel.app/api?username=Jason0asdjia&show_icons=true&theme=graywhite">
 <meta property="article:published_time" content="2021-09-20T07:41:38.000Z">
-<meta property="article:modified_time" content="2021-09-23T04:31:36.430Z">
+<meta property="article:modified_time" content="2021-09-23T04:38:17.710Z">
 <meta property="article:author" content="Bye">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://github-readme-stats.vercel.app/api?username=Jason0asdjia&show_icons=true&theme=graywhite">
@@ -476,9 +476,9 @@
     var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);-->
 
     if (openOnPC) {
-      document.getElementById("runtime").innerHTML = "本站已运营：" + diffYears + " years " + diffDays + " days " + diffHours + " hours " ;
+      document.getElementById("runtime").innerHTML = "本站已运营：" + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
     } else {
-      document.getElementById("runtime").innerHTML = "本站已运营：" + diffYears + "y " + diffDays + "d " + diffHours + "h " ;
+      document.getElementById("runtime").innerHTML = "本站已运营：" + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
     }
   }
 
