@@ -1237,7 +1237,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #e4ffff;
+  background: #5463c6;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2816,7 +2816,7 @@ a.my-post-title-link:before {
   font-size: 15px;
   line-height: 18px;
 }
-.my-post:hover {
+a.my-post-title-link:hover {
   transform: scale(1.1);
   box-shadow: 10px 10px 15px 2px rgba(0,0,0,0.12), 0 0 6px 0 rgba(104,104,105,0.1);
   border-radius: 15px;
@@ -2826,7 +2826,7 @@ a.my-post-title-link:before {
   transition-duration: 0.15s;
 }
 @media (max-width: 767px) {
-  .my-post:hover {
+  a.my-post-title-link:hover {
     width: 260px;
     margin-left: 18px;
   }
