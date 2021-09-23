@@ -250,7 +250,7 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
-            </span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -408,10 +408,10 @@
 
 <div class="copyright">
   
-  &copy; 
+    
   <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-globe"></i>
+    <i class="fa fa-copyright"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Bye</span>
     
@@ -422,7 +422,7 @@
     <span class="post-meta-divider">|</span> -->
     <!-- 不蒜子计数初始值纠正 -->
     <script>
-    $(document).ready(function() {
+    (function() {
 
         var int = setInterval(fixCount, 50);  // 50ms周期检测函数
         var countOffset = 20000;  // 初始化首次数据
@@ -440,7 +440,7 @@
             }  
         }
             
-    });
+    })();
     </script> 
     
     
