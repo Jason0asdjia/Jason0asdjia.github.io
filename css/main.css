@@ -1237,7 +1237,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #75394f;
+  background: #8f28e9;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2940,4 +2940,9 @@ a.category-list-link:before {
   height: 10px;
 /*background: url(../images/scrollbar_arrow.png) no-repeat 0 0;*/
 /*可以添加滚动条样式*/
+}
+code {
+  color: #ff7600;
+  background: #fbf7f8;
+  margin: 2px;
 }
