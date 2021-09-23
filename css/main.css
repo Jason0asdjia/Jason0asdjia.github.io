@@ -1237,7 +1237,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #8f28e9;
+  background: #01d642;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2788,7 +2788,7 @@ ul.breadcrumb li + li:last-child {
   }
 }
 .my-post-time {
-  font-size: 11px;
+  font-size: 12px;
   position: absolute;
   color: #fff;
   background-color: #49b1f5;
@@ -2819,10 +2819,9 @@ a.my-post-title-link:before {
 .my-post:hover {
   transform: scale(1.1);
   box-shadow: 10px 10px 15px 2px rgba(0,0,0,0.12), 0 0 6px 0 rgba(104,104,105,0.1);
-  border-radius: 30px;
-  width: 400px;
+  border-radius: 15px;
   padding: 6px 16px;
-  margin-left: 25px;
+  margin-left: 0px;
   font-size: 16px;
   transition-duration: 0.15s;
 }
