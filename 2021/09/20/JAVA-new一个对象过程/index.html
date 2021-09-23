@@ -576,9 +576,9 @@
     var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
 
     if (openOnPC) {
-      document.getElementById("runtime").innerHTML = "✨已运营: " + diffYears + " years " + diffDays + " days " + diffHours + " hours " + diffMinutes + " mins " + diffSeconds + " secs";
+      document.getElementById("runtime").innerHTML = "✨已运营: " + diffYears + " 年 " + diffDays + " 天 ";
     } else {
-      document.getElementById("runtime").innerHTML = "✨已运营: " + diffYears + "y " + diffDays + "d " + diffHours + "h " + diffMinutes + "m " + diffSeconds + "s";
+      document.getElementById("runtime").innerHTML = "✨已运营: " + diffYears + "年 " + diffDays + "天 ";
     }
   }
 
