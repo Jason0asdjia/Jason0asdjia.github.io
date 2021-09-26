@@ -1236,7 +1236,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #4dff0b;
+  background: #45ff9f;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1275,7 +1275,7 @@ pre .javascript .function {
 .links-of-blogroll {
   font-size: 0.8125em;
   margin-top: 15px;
-  padding: 3px 0 0;
+  padding: 5px 0 0;
   border-top: 1px dotted #ccc;
 }
 .links-of-blogroll-title {
@@ -1288,7 +1288,7 @@ pre .javascript .function {
   margin: 0;
   padding: 0;
 }
-.links-of-blogroll-list .pull-left {
+.pull-left {
   float: left;
 }
 #sidebar-dimmer {
