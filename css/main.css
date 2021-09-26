@@ -1236,7 +1236,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0d69ab;
+  background: #ff55cd;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1274,7 +1274,9 @@ pre .javascript .function {
 }
 .links-of-blogroll {
   font-size: 0.8125em;
-  margin-top: 10px;
+  margin-top: 15px;
+  padding: 3px 0 0;
+  border-top: 1px dotted #ccc;
 }
 .links-of-blogroll-title {
   font-size: 0.875em;
