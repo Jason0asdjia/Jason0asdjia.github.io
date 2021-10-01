@@ -29,13 +29,13 @@
 <meta property="og:site_name" content="Bye的踩坑记录">
 <meta property="og:description" content="最近博主在看廖雪峰的 Git 教程时，发现关于 Bug 分支中提到了一下场景：  在软件开发过程中，出现 bug 时，通过 git 新建一个分支来修复 bug，修复后再将临时分支删除。但是如果此时 dev（用于开发的分支）分支上工作只做到一半，没法提交，此时可以通过stash命令将 dev 分支上的工作现场隐藏起来，等之后在进行恢复。  此时博主有了疑问：明明新建了 bug 分支与其他分支隔开工作">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jason0asdjia.github.io/images/gitbranch.png">
+<meta property="og:image" content="https://jason0asdjia.github.io/images/Git/gitbranch.png">
 <meta property="article:published_time" content="2021-10-01T13:52:45.000Z">
-<meta property="article:modified_time" content="2021-10-01T16:20:53.875Z">
+<meta property="article:modified_time" content="2021-10-01T16:29:13.345Z">
 <meta property="article:author" content="Bye">
 <meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jason0asdjia.github.io/images/gitbranch.png">
+<meta name="twitter:image" content="https://jason0asdjia.github.io/images/Git/gitbranch.png">
 
 <link rel="canonical" href="https://jason0asdjia.github.io/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/">
 
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-02 00:20:53" itemprop="dateModified" datetime="2021-10-02T00:20:53+08:00">2021-10-02</time>
+                <time title="修改时间：2021-10-02 00:29:13" itemprop="dateModified" datetime="2021-10-02T00:29:13+08:00">2021-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
 <span id="more"></span>
 
 <h2 id="背景设定"><a href="#背景设定" class="headerlink" title="背景设定"></a>背景设定</h2><p>我们通常建立<code>master</code>分支用于发布新版本，同时建立<code>dev</code>分支用于平时干活，团队中的人大部分在此分支上工作，发布新版本就把<code>dev</code>合并到<code>master</code>上，此时我们发现 bug，就建立临时分支 <code>bug-xxx</code>。如图所示：</p>
-<img src="/images/gitbranch.png" alt="gitbranch" style="zoom:80%;" />
+<img src="/images/Git/gitbranch.png" alt="gitbranch" style="zoom:80%;" />
 
 <p>此时我们建立分支 <code>bug-xxx</code>，但是目前 <code>dev</code> 已经较上一次提交，进行了一部分工作，所以需要使用 stash 来隐藏这部分之后在进行新分支的操作。博主的问题就是在这部分：我们新建分支时是从上一次 <code>dev</code> 的提交节点（<code>图中dev分支最近一次提交节点</code>）分出，和已做的部分工作有什么关系？</p>
 <h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>在经历一波尝试之后，重新学习了 git 追踪文件的逻辑。我们在本地建立一个 git 仓库，并创建<code>dev</code>分支，建立一个 REAME 文件，第一次提交后，再次对其修改（模拟工作做一部分，没有进行 add 和 commit），建立 <code>bug-xxx</code> 分支，并查看 <code>bug-xxx</code> 分支的 git 库状态。</p>
