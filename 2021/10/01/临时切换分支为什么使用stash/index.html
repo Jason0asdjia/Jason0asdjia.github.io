@@ -22,22 +22,22 @@
     var CONFIG = {"hostname":"jason0asdjia.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="在使用hexo创建博客的时候用到nodejs和npm，博主第一次接触 js 的管理工具，所以从头安装，在 win10 上使用的时候，除了配置环境变量之外，在使用npm时需要用管理员运行 pwsh，所以就转到 WSL 上，在搜索教程时，看到 WSL1 在安装 nodejs 时可能会有一些问题，如果你是 WSL1 并遇到问题，可以尝试升级到 WSL2。  博主使用的是 ubuntu18.04LTS 版">
+  <meta name="description" content="最近博主在看廖雪峰的 Git 教程时，发现关于 Bug 分支中提到了一下场景：  在软件开发过程中，出现 bug 时，通过 git 新建一个分支来修复 bug，修复后再将临时分支删除。但是如果此时 dev（用于开发的分支）分支上工作只做到一半，没法提交，此时可以通过* stash 命令将 dev 分支上的工作现场隐藏起来，等之后在进行恢复。  此时博主有了疑问：明明新建了 bug 分支与其他分支隔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WSL2 安装nodejs">
-<meta property="og:url" content="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/index.html">
+<meta property="og:title" content="临时切换分支为什么使用stash">
+<meta property="og:url" content="https://jason0asdjia.github.io/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/index.html">
 <meta property="og:site_name" content="Bye的踩坑记录">
-<meta property="og:description" content="在使用hexo创建博客的时候用到nodejs和npm，博主第一次接触 js 的管理工具，所以从头安装，在 win10 上使用的时候，除了配置环境变量之外，在使用npm时需要用管理员运行 pwsh，所以就转到 WSL 上，在搜索教程时，看到 WSL1 在安装 nodejs 时可能会有一些问题，如果你是 WSL1 并遇到问题，可以尝试升级到 WSL2。  博主使用的是 ubuntu18.04LTS 版">
+<meta property="og:description" content="最近博主在看廖雪峰的 Git 教程时，发现关于 Bug 分支中提到了一下场景：  在软件开发过程中，出现 bug 时，通过 git 新建一个分支来修复 bug，修复后再将临时分支删除。但是如果此时 dev（用于开发的分支）分支上工作只做到一半，没法提交，此时可以通过* stash 命令将 dev 分支上的工作现场隐藏起来，等之后在进行恢复。  此时博主有了疑问：明明新建了 bug 分支与其他分支隔">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jason0asdjia.github.io/images/WSL2/lan.png">
-<meta property="article:published_time" content="2021-09-23T11:19:30.000Z">
-<meta property="article:modified_time" content="2021-09-26T11:15:43.607Z">
+<meta property="og:image" content="https://jason0asdjia.github.io/imgaes/gitbranch.png">
+<meta property="article:published_time" content="2021-10-01T13:52:45.000Z">
+<meta property="article:modified_time" content="2021-10-01T16:04:17.476Z">
 <meta property="article:author" content="Bye">
-<meta property="article:tag" content="WSL">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jason0asdjia.github.io/images/WSL2/lan.png">
+<meta name="twitter:image" content="https://jason0asdjia.github.io/imgaes/gitbranch.png">
 
-<link rel="canonical" href="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/">
+<link rel="canonical" href="https://jason0asdjia.github.io/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/">
 
 
 <script id="page-configurations">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>WSL2 安装nodejs | Bye的踩坑记录</title>
+  <title>临时切换分支为什么使用stash | Bye的踩坑记录</title>
   
 
 
@@ -204,7 +204,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/">
+    <link itemprop="mainEntityOfPage" href="https://jason0asdjia.github.io/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -217,7 +217,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          WSL2 安装nodejs
+          临时切换分支为什么使用stash
         </h1>
 
         <div class="post-meta">
@@ -227,14 +227,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-09-23 19:19:30" itemprop="dateCreated datePublished" datetime="2021-09-23T19:19:30+08:00">2021-09-23</time>
+              <time title="创建时间：2021-10-01 21:52:45" itemprop="dateCreated datePublished" datetime="2021-10-01T21:52:45+08:00">2021-10-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-26 19:15:43" itemprop="dateModified" datetime="2021-09-26T19:15:43+08:00">2021-09-26</time>
+                <time title="修改时间：2021-10-02 00:04:17" itemprop="dateModified" datetime="2021-10-02T00:04:17+08:00">2021-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,12 +242,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E6%8C%96%E5%9D%91/" itemprop="url" rel="index"><span itemprop="name">日常挖坑</span></a>
+                  <a href="/categories/%E7%96%91%E9%9A%BE%E6%9D%82%E7%97%87/" itemprop="url" rel="index"><span itemprop="name">疑难杂症</span></a>
                 </span>
             </span>
 
           
-            <span id="/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/" class="post-meta-item leancloud_visitors" data-flag-title="WSL2 安装nodejs" title="阅读次数">
+            <span id="/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/" class="post-meta-item leancloud_visitors" data-flag-title="临时切换分支为什么使用stash" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -259,7 +259,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>999</span>
+              <span>1.2k</span>
             </span>
 
         </div>
@@ -271,62 +271,43 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>在使用<code>hexo</code>创建博客的时候用到<code>nodejs</code>和<code>npm</code>，博主第一次接触 js 的管理工具，所以从头安装，在 win10 上使用的时候，除了配置环境变量之外，在使用<code>npm</code>时需要用管理员运行 pwsh，所以就转到 WSL 上，在搜索教程时，看到 WSL1 在安装 nodejs 时可能会有一些问题，如果你是 WSL1 并遇到问题，可以尝试升级到 WSL2。</p>
+        <p>最近博主在看廖雪峰的 <code>Git</code> 教程时，发现关于 Bug 分支中提到了一下场景：</p>
 <blockquote>
-<p>博主使用的是 ubuntu18.04LTS 版本的 WSL2</p>
+<p>在软件开发过程中，出现 bug 时，通过 git 新建一个分支来修复 bug，修复后再将临时分支删除。但是如果此时 dev（用于开发的分支）分支上工作只做到一半，没法提交，此时可以通过* <em><code>stash</code></em> <em>命令将 dev 分支上的工作现场隐藏起来，等之后在进行恢复。</em></p>
 </blockquote>
+<p>此时博主有了疑问：明明新建了 <code>bug</code> 分支与其他分支隔开工作环境，为什么还要对 <code>dev</code> 分支上的工作环境隐藏起来？这就要验证一下 git 不同分支对不同时期的工作环境的”态度“。</p>
 <span id="more"></span>
 
-<h2 id="安装-nodejs"><a href="#安装-nodejs" class="headerlink" title="安装 nodejs"></a>安装 nodejs</h2><p>安装之前看网上说使用<code>nvm</code>管理 node，博主安装之后，仍有一些错误（可能与博主对前端的东西接触到过少），所以采用 ubuntu 存储库安装：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt <span class="keyword">install</span> nodejs npm</span><br></pre></td></tr></table></figure>
+<h2 id="背景设定"><a href="#背景设定" class="headerlink" title="背景设定"></a>背景设定</h2><p>我们通常建立<code>master</code>分支用于发布新版本，同时建立<code>dev</code>分支用于平时干活，团队中的人大部分在此分支上工作，发布新版本就把<code>dev</code>合并到<code>master</code>上，此时我们发现 bug，就建立临时分支 bug-xxx。如图所示：</p>
+<img src="/imgaes/gitbranch.png" alt="gitbranch" style="zoom:80%;" />
 
-<p><strong>注意</strong>：安装的是 nodejs，ubuntu 存储库中有软件包与 node 冲突。</p>
-<p>查看安装结果：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nodejs <span class="comment">--version</span></span><br><span class="line"><span class="comment"># v14.17.6</span></span><br><span class="line">npm <span class="comment">--version</span></span><br><span class="line"><span class="comment"># 6.14.15</span></span><br></pre></td></tr></table></figure>
+<p>此时我们在 dev 的某个版本上需要修改 bug，就建立分支 bug-xxx，但是目前 dev 已经较上一次提交，进行了一部分工作，所以需要使用 stash 来隐藏这部分之后在进行新分支的操作。博主的问题就是在这部分：我们新建分支时是从上一次 dev 的提交节点（<code>图中dev分支最近一次提交节点</code>）分出，和已做的部分工作有什么关系？</p>
+<h2 id="解决问题"><a href="#解决问题" class="headerlink" title="解决问题"></a>解决问题</h2><p>在经历一波尝试之后，重新学习了 git 追踪文件的逻辑。我们在本地建立一个 git 仓库，并创建<code>dev</code>分支，建立一个 REAME 文件，第一次提交后，再次对其修改（模拟工作做一部分，没有进行 add 和 commit），建立 <code>bug-xxx</code> 分支，并查看 <code>bug-xxx</code> 分支的 git 库状态。</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line"><span class="meta"># On branch bug-xxx</span></span><br><span class="line"><span class="meta">#  Changes not staged for commit:</span></span><br><span class="line"><span class="meta">#    (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span></span><br><span class="line"><span class="meta">#    (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#          modified:   README.md</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span></span><br></pre></td></tr></table></figure>
 
-<p>如果版本低于博主版本，建议先升级：</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install <span class="built_in">n</span> -g</span><br><span class="line">sudo <span class="built_in">n</span> stable</span><br></pre></td></tr></table></figure>
-
-<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p>升级完成之后可以执行一下命令，验证一下是否有错误提示：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo -g</span><br></pre></td></tr></table></figure>
-
-<p>如果报权限问题，按以下顺序进行设置，成功为止：</p>
-<ol>
-<li><p>设置 npm 的权限：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="builtin-name">set</span> <span class="attribute">unsafe-perm</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
-<li><p>如果开启 vscode 的 Remote WSL，需要关闭 WSL，WSL2 可以在 pwsh 中执行：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="comment">--shutdown</span></span><br></pre></td></tr></table></figure></li>
-<li><p>修改 prefix 目录，更改 npm 的 global 仓库地址：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="builtin-name">set</span> <span class="attribute">prefix</span>=<span class="string">&quot;<span class="variable">$&#123;HOME&#125;</span>/npm-global&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>博主基本设置到这里就可以使用，但每个人的错误可能不一样，需要大家自行搜索解决，最后一步解决办法请参考：<a target="_blank" rel="noopener" href="https://im.shellj.com/2020/05/wsl-npm-install-permission-denied-error.html">wsl npm install EACCES: permission denied 错误解决方法</a></p>
-<h2 id="npm-加速"><a href="#npm-加速" class="headerlink" title="npm 加速"></a>npm 加速</h2><p>npm 在使用时，可能会出现速度过慢，博主在 WSL 上使用速度奇慢，但是在 ali 云上就是另一种体验，可能这就是金钱的力量。</p>
-<p>1.运行以下命令设置淘宝镜像：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
-
-<p>之后正常使用 npm 即可，在搜索时发现有安装 cnpm 的办法，博主没有采用，大家可以自行尝试。</p>
-<p>2.由于 WSL2 与 WSL1 不同，无法通过直接监听<code>本地</code>端口配置加速，需要先查看 win10 机器的 ip，具体流程如下（参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/153124468">为 WSL2 一键设置代理</a>）：</p>
-<ul>
-<li><p>首先在 ss 等软件上开启允许本地 LAN 连接（端口号视使用的软件而定）</p>
-  <img src="/images/WSL2/lan.png" style="zoom:50%;" /></li>
-<li><p>然后配置脚本将 win10 的 ip 配置到 WSL 的监听中，在 WSL 个人目录下创建<code>.proxyrc</code>。</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">host_ip=$(cat /etc/resolv.conf |grep <span class="string">&quot;nameserver&quot;</span> |cut -f 2 -d <span class="string">&quot; &quot;</span>)</span><br><span class="line"><span class="built_in">export</span> ALL_PROXY=<span class="string">&quot;http://<span class="variable">$host_ip</span>:7890&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>使用时只需要 <code>source .proxyrc</code> 生效脚本即可。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .proxyrc</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>win10 的 ip 不变的情况下，也可以将<code>export ALL_PROXY=&quot;http://$host_ip:7890&quot;</code>配置为环境变量（个人目录的<code>.bashrc</code>），直接在 bash 启动时就监听加速端口（各位自行尝试）。</li>
-</ul>
-</br>
-
+<p>此时我们发现，<code>在bug-xxx分支也能看到dev分支操作的REAME文件（未commit）</code>，这是我们不愿意看到的，因为如果是修改代码，一定要用最近版本的代码进行修改，不能在他人修改过的代码上修改，防止 bug 更多。</p>
 <blockquote>
-<p>博客写的不多，如有错误请各位见谅，可以的话请联系我更正，谢谢！</p>
+<p>在了解过之后，发现在上述情况下，<code>dev</code>分支上修改或新建的文件<code>没有执行commit操作</code>（提交到版本库中），都会被其他分支查看到。</p>
 </blockquote>
+<p>之后就实验一下 stash 命令：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git stash</span><br><span class="line"># Saved working directory <span class="built_in">and</span> <span class="built_in">index</span> state WIP <span class="keyword">on</span> de<span class="variable">v:</span> cabf4ea created README</span><br></pre></td></tr></table></figure>
+
+<p>在 bug 分支查看库状态：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br><span class="line"># <span class="keyword">On</span> branch bug-xxx</span><br><span class="line"># <span class="keyword">nothing</span> <span class="keyword">to</span> <span class="keyword">commit</span>, working tree clean</span><br></pre></td></tr></table></figure>
+
+<p>发现执行成功，然后如果修复完 bug，执行<code>git stash pop</code>即可恢复现场</p>
+<blockquote>
+<p>建议在 pop 后，进行一次 commit 提交，</p>
+</blockquote>
+<h3 id="其他情况"><a href="#其他情况" class="headerlink" title="其他情况"></a>其他情况</h3><p>在执行<code>git stash</code>时，如果文件是新建的，并没有被<code>版本库</code>或者<code>暂存区</code>追踪，则无法进行隐藏：</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 在dev分支下新建文件</span><br><span class="line">vim dev.<span class="keyword">log</span></span><br><span class="line"></span><br><span class="line">git stash</span><br><span class="line"># <span class="keyword">No</span> <span class="keyword">local</span> changes <span class="keyword">to</span> save</span><br></pre></td></tr></table></figure>
+
+<p>发现并没有隐藏新建的文件，切换分支看一下：</p>
+<figure class="highlight vala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git checkout bug-xxx</span><br><span class="line">git status</span><br><span class="line"><span class="meta"># On branch bug-xxx</span></span><br><span class="line"><span class="meta"># Untracked files:</span></span><br><span class="line"><span class="meta">#   (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta">#         dev.log</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span></span><br></pre></td></tr></table></figure>
+
+<p>发现也没有隐藏成功，这样符合之前我们的结论：没有执行 commit 的文件会被其他分支看见，无论修改还是新建、添加到暂存区与否。</p>
+<p>这种情况就需要先将新建的文件 add 到<code>暂存区</code>，再进行隐藏。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>当我们新建分支时，如果对最近一次提交进行操作了，在没做完的情况下，一定要 add 到<code>暂存区</code>后，使用 stash 将我们多做的部分隐藏，这样我们新建分支时，就不会有我们做的部分文件干扰。如果不建立新分支修复 bug，请参考<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600/900388704535136">廖雪峰 Git 教程</a>，有问题可以参考教程下评论。</p>
 
     </div>
 
@@ -368,7 +349,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/" title="WSL2 安装nodejs">https://jason0asdjia.github.io/2021/09/23/WSL2-安装nodejs/</a>
+    <a href="https://jason0asdjia.github.io/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/" title="临时切换分支为什么使用stash">https://jason0asdjia.github.io/2021/10/01/临时切换分支为什么使用stash/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -379,7 +360,7 @@
         
       <footer class="post-footer">
           <div class="post-tags">
-                <a href="/tags/WSL/" rel="tag"> <i class="fa fa-tag"></i> WSL</a>
+                <a href="/tags/Git/" rel="tag"> <i class="fa fa-tag"></i> Git</a>
           </div>
 
         
@@ -388,13 +369,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/20/JAVA-new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E8%BF%87%E7%A8%8B/" rel="prev" title="Java中new一个对象的过程">
-      <i class="fa fa-chevron-left"></i> Java中new一个对象的过程
+    <a href="/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/" rel="prev" title="WSL2 安装nodejs">
+      <i class="fa fa-chevron-left"></i> WSL2 安装nodejs
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/" rel="next" title="临时切换分支为什么使用stash">
-      临时切换分支为什么使用stash <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -453,7 +431,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nodejs"><span class="nav-text">安装 nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-%E5%8A%A0%E9%80%9F"><span class="nav-text">npm 加速</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E8%AE%BE%E5%AE%9A"><span class="nav-text">背景设定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E9%97%AE%E9%A2%98"><span class="nav-text">解决问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E6%83%85%E5%86%B5"><span class="nav-text">其他情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E8%AE%BA"><span class="nav-text">结论</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

@@ -22,22 +22,15 @@
     var CONFIG = {"hostname":"jason0asdjia.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="在使用hexo创建博客的时候用到nodejs和npm，博主第一次接触 js 的管理工具，所以从头安装，在 win10 上使用的时候，除了配置环境变量之外，在使用npm时需要用管理员运行 pwsh，所以就转到 WSL 上，在搜索教程时，看到 WSL1 在安装 nodejs 时可能会有一些问题，如果你是 WSL1 并遇到问题，可以尝试升级到 WSL2。  博主使用的是 ubuntu18.04LTS 版">
-<meta property="og:type" content="article">
-<meta property="og:title" content="WSL2 安装nodejs">
-<meta property="og:url" content="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Bye的踩坑记录">
+<meta property="og:url" content="https://jason0asdjia.github.io/archives/2021/10/index.html">
 <meta property="og:site_name" content="Bye的踩坑记录">
-<meta property="og:description" content="在使用hexo创建博客的时候用到nodejs和npm，博主第一次接触 js 的管理工具，所以从头安装，在 win10 上使用的时候，除了配置环境变量之外，在使用npm时需要用管理员运行 pwsh，所以就转到 WSL 上，在搜索教程时，看到 WSL1 在安装 nodejs 时可能会有一些问题，如果你是 WSL1 并遇到问题，可以尝试升级到 WSL2。  博主使用的是 ubuntu18.04LTS 版">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jason0asdjia.github.io/images/WSL2/lan.png">
-<meta property="article:published_time" content="2021-09-23T11:19:30.000Z">
-<meta property="article:modified_time" content="2021-09-26T11:15:43.607Z">
 <meta property="article:author" content="Bye">
-<meta property="article:tag" content="WSL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jason0asdjia.github.io/images/WSL2/lan.png">
 
-<link rel="canonical" href="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/">
+<link rel="canonical" href="https://jason0asdjia.github.io/archives/2021/10/">
 
 
 <script id="page-configurations">
@@ -45,12 +38,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>WSL2 安装nodejs | Bye的踩坑记录</title>
+  <title>归档 | Bye的踩坑记录</title>
   
 
 
@@ -197,210 +190,52 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content archive">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="Bye">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Bye的踩坑记录">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          WSL2 安装nodejs
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-09-23 19:19:30" itemprop="dateCreated datePublished" datetime="2021-09-23T19:19:30+08:00">2021-09-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-09-26 19:15:43" itemprop="dateModified" datetime="2021-09-26T19:15:43+08:00">2021-09-26</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%97%A5%E5%B8%B8%E6%8C%96%E5%9D%91/" itemprop="url" rel="index"><span itemprop="name">日常挖坑</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/" class="post-meta-item leancloud_visitors" data-flag-title="WSL2 安装nodejs" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span><br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>999</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-        <p>在使用<code>hexo</code>创建博客的时候用到<code>nodejs</code>和<code>npm</code>，博主第一次接触 js 的管理工具，所以从头安装，在 win10 上使用的时候，除了配置环境变量之外，在使用<code>npm</code>时需要用管理员运行 pwsh，所以就转到 WSL 上，在搜索教程时，看到 WSL1 在安装 nodejs 时可能会有一些问题，如果你是 WSL1 并遇到问题，可以尝试升级到 WSL2。</p>
-<blockquote>
-<p>博主使用的是 ubuntu18.04LTS 版本的 WSL2</p>
-</blockquote>
-<span id="more"></span>
-
-<h2 id="安装-nodejs"><a href="#安装-nodejs" class="headerlink" title="安装 nodejs"></a>安装 nodejs</h2><p>安装之前看网上说使用<code>nvm</code>管理 node，博主安装之后，仍有一些错误（可能与博主对前端的东西接触到过少），所以采用 ubuntu 存储库安装：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt <span class="keyword">install</span> nodejs npm</span><br></pre></td></tr></table></figure>
-
-<p><strong>注意</strong>：安装的是 nodejs，ubuntu 存储库中有软件包与 node 冲突。</p>
-<p>查看安装结果：</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">nodejs <span class="comment">--version</span></span><br><span class="line"><span class="comment"># v14.17.6</span></span><br><span class="line">npm <span class="comment">--version</span></span><br><span class="line"><span class="comment"># 6.14.15</span></span><br></pre></td></tr></table></figure>
-
-<p>如果版本低于博主版本，建议先升级：</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install <span class="built_in">n</span> -g</span><br><span class="line">sudo <span class="built_in">n</span> stable</span><br></pre></td></tr></table></figure>
-
-<h2 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h2><p>升级完成之后可以执行一下命令，验证一下是否有错误提示：</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo -g</span><br></pre></td></tr></table></figure>
-
-<p>如果报权限问题，按以下顺序进行设置，成功为止：</p>
-<ol>
-<li><p>设置 npm 的权限：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="builtin-name">set</span> <span class="attribute">unsafe-perm</span>=<span class="literal">true</span></span><br></pre></td></tr></table></figure></li>
-<li><p>如果开启 vscode 的 Remote WSL，需要关闭 WSL，WSL2 可以在 pwsh 中执行：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wsl <span class="comment">--shutdown</span></span><br></pre></td></tr></table></figure></li>
-<li><p>修改 prefix 目录，更改 npm 的 global 仓库地址：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm<span class="built_in"> config </span><span class="builtin-name">set</span> <span class="attribute">prefix</span>=<span class="string">&quot;<span class="variable">$&#123;HOME&#125;</span>/npm-global&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>博主基本设置到这里就可以使用，但每个人的错误可能不一样，需要大家自行搜索解决，最后一步解决办法请参考：<a target="_blank" rel="noopener" href="https://im.shellj.com/2020/05/wsl-npm-install-permission-denied-error.html">wsl npm install EACCES: permission denied 错误解决方法</a></p>
-<h2 id="npm-加速"><a href="#npm-加速" class="headerlink" title="npm 加速"></a>npm 加速</h2><p>npm 在使用时，可能会出现速度过慢，博主在 WSL 上使用速度奇慢，但是在 ali 云上就是另一种体验，可能这就是金钱的力量。</p>
-<p>1.运行以下命令设置淘宝镜像：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https:<span class="comment">//registry.npm.taobao.org</span></span><br></pre></td></tr></table></figure>
-
-<p>之后正常使用 npm 即可，在搜索时发现有安装 cnpm 的办法，博主没有采用，大家可以自行尝试。</p>
-<p>2.由于 WSL2 与 WSL1 不同，无法通过直接监听<code>本地</code>端口配置加速，需要先查看 win10 机器的 ip，具体流程如下（参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/153124468">为 WSL2 一键设置代理</a>）：</p>
-<ul>
-<li><p>首先在 ss 等软件上开启允许本地 LAN 连接（端口号视使用的软件而定）</p>
-  <img src="/images/WSL2/lan.png" style="zoom:50%;" /></li>
-<li><p>然后配置脚本将 win10 的 ip 配置到 WSL 的监听中，在 WSL 个人目录下创建<code>.proxyrc</code>。</p>
-</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">host_ip=$(cat /etc/resolv.conf |grep <span class="string">&quot;nameserver&quot;</span> |cut -f 2 -d <span class="string">&quot; &quot;</span>)</span><br><span class="line"><span class="built_in">export</span> ALL_PROXY=<span class="string">&quot;http://<span class="variable">$host_ip</span>:7890&quot;</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>使用时只需要 <code>source .proxyrc</code> 生效脚本即可。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .proxyrc</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>win10 的 ip 不变的情况下，也可以将<code>export ALL_PROXY=&quot;http://$host_ip:7890&quot;</code>配置为环境变量（个人目录的<code>.bashrc</code>），直接在 bash 启动时就监听加速端口（各位自行尝试）。</li>
-</ul>
-</br>
-
-<blockquote>
-<p>博客写的不多，如有错误请各位见谅，可以的话请联系我更正，谢谢！</p>
-</blockquote>
-
-    </div>
-
-    
-    
-    <div>
-    <div>
-        
-        <div style="text-align:center;color: #ccc;font-size:14px;">-----------------------<span style="margin: 0 10px;">本文结束</span><i class="fa fa-outdent"></i><span style="margin: 0 10px;">感谢您的阅读</span>-----------------------</div>
-        
-    </div>
-</div>
-        <div class="reward-container">
-  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
-  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
-    打赏
-  </button>
-  <div id="qr" style="display: none;">
-      
-      <div style="display: inline-block;">
-        <img src="/images/wechatpay.png" alt="Bye 微信支付">
-        <p>微信支付</p>
-      </div>
-      
-      <div style="display: inline-block;">
-        <img src="/images/alipay.png" alt="Bye 支付宝">
-        <p>支付宝</p>
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        <span class="collection-header">嗯..! 目前共计 3 篇日志。 继续努力。</span>
       </div>
 
-  </div>
-</div>
-
-        
-
-<div>
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>Bye
-  </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="https://jason0asdjia.github.io/2021/09/23/WSL2-%E5%AE%89%E8%A3%85nodejs/" title="WSL2 安装nodejs">https://jason0asdjia.github.io/2021/09/23/WSL2-安装nodejs/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
-  </li>
-</ul>
-</div>
-
-        
-      <footer class="post-footer">
-          <div class="post-tags">
-                <a href="/tags/WSL/" rel="tag"> <i class="fa fa-tag"></i> WSL</a>
-          </div>
-
-        
-
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2021/09/20/JAVA-new%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E8%BF%87%E7%A8%8B/" rel="prev" title="Java中new一个对象的过程">
-      <i class="fa fa-chevron-left"></i> Java中new一个对象的过程
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/" rel="next" title="临时切换分支为什么使用stash">
-      临时切换分支为什么使用stash <i class="fa fa-chevron-right"></i>
-    </a></div>
+      
+    <div class="collection-year">
+      <h1 class="collection-header">2021</h1>
     </div>
-      </footer>
-    
+
+  <article class="my-post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="my-post-header">
+
+      <div class="my-post-meta">
+        <time class="my-post-time" itemprop="dateCreated"
+              datetime="2021-10-01T21:52:45+08:00"
+              content="2021-10-01">
+          10-01
+        </time>
+      </div>
+
+      <h2 class="my-post-title">
+          <a class="my-post-title-link" href="/2021/10/01/%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF%E4%B8%BA%E4%BB%80%E4%B9%88%E4%BD%BF%E7%94%A8stash/" itemprop="url">
+            
+              <span itemprop="name">临时切换分支为什么使用stash</span>
+            
+          </a>
+      </h2>
+
+    </header>
   </article>
+
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
@@ -453,7 +288,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-nodejs"><span class="nav-text">安装 nodejs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="nav-text">错误处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-%E5%8A%A0%E9%80%9F"><span class="nav-text">npm 加速</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
